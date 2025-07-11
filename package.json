@@ -1,0 +1,46 @@
+{
+  "name": "max-validate-init-data",
+  "description": "Validate init data from the MAX messenger",
+  "version": "0.0.1",
+  "author": "w1png",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/w1png/max-validate-init-data.git"
+  },
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./parse": {
+      "import": "./dist/parse.js",
+      "types": "./dist/parse.d.ts"
+    },
+    "./validate": {
+      "import": "./dist/validate.js",
+      "types": "./dist/validate.d.ts"
+    },
+    "./types": {
+      "import": "./dist/types.js",
+      "types": "./dist/types.d.ts"
+    }
+  },
+  "files": ["dist"],
+  "scripts": {
+    "dev": "bun run --watch src/index.ts",
+    "build": "tsc --emitDeclarationOnly --outDir dist && bun build src/index.ts src/parse.ts src/validate.ts src/types.ts --outdir dist --target node --minify",
+    "test": "bun test",
+    "prepublishOnly": "bun run build"
+  },
+  "dependencies": {
+    "crypto": "^1.0.1"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "typescript": "^5.0.0"
+  }
+}
