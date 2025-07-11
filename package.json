@@ -1,7 +1,7 @@
 {
   "name": "max-validate-init-data",
   "description": "Validate init data from the MAX messenger",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "author": "w1png",
   "license": "MIT",
   "repository": {
@@ -29,7 +29,9 @@
       "types": "./dist/types.d.ts"
     }
   },
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "dev": "bun run --watch src/index.ts",
     "build": "tsc --emitDeclarationOnly --outDir dist && bun build src/index.ts src/parse.ts src/validate.ts src/types.ts --outdir dist --target node",
